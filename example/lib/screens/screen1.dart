@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:touchable/touchable.dart';
+import 'package:touchable/myputt_touchable.dart';
 
 class Screen1 extends StatefulWidget {
   @override
@@ -74,7 +74,8 @@ class MyPainter extends CustomPainter {
   void paint(Canvas _canvas, Size size) {
     TouchyCanvas canvas = TouchyCanvas(context, _canvas);
 
-    canvas.drawCircle(Offset(0, 0), 60, Paint()..color = Colors.deepOrange, onTapDown: (_) {
+    canvas.drawCircle(Offset(0, 0), 60, Paint()..color = Colors.deepOrange,
+        onTapDown: (_) {
       print("orange Circle touched");
       setState('orange');
     });
@@ -119,7 +120,9 @@ class MyPainter extends CustomPainter {
       setState('green');
     });
 
-    canvas.drawCircle(Offset(150, 250), 70, Paint()..color = Colors.lightBlueAccent, onTapDown: (_) {
+    canvas.drawCircle(
+        Offset(150, 250), 70, Paint()..color = Colors.lightBlueAccent,
+        onTapDown: (_) {
       print('light blue Circle tap down');
       setState('white');
     }, onTapUp: (detail) {
@@ -149,7 +152,8 @@ class MyPainter extends CustomPainter {
     });
 
     canvas.drawRRect(
-        RRect.fromLTRBR(100 - 20.0, 340 - 20.0, 300 + 20.0, 650 + 20.0, Radius.elliptical(100 + 20.0, 150 + 20.0)),
+        RRect.fromLTRBR(100 - 20.0, 340 - 20.0, 300 + 20.0, 650 + 20.0,
+            Radius.elliptical(100 + 20.0, 150 + 20.0)),
         Paint()
           ..strokeWidth = 1
           ..style = PaintingStyle.stroke
