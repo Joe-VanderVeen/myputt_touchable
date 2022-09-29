@@ -33,6 +33,7 @@ class TouchyCanvas {
     AxisDirection scrollDirection = AxisDirection.down,
   }) {
     var touchController = TouchDetectionController.of(context);
+    print(touchController);
     touchController?.addListener((event) {
       print('touch received');
       _shapeHandler.handleGestureEvent(
@@ -479,8 +480,6 @@ class TouchyCanvas {
     GestureForcePressEndCallback? onForcePressEnd,
     GestureForcePressPeakCallback? onForcePressPeak,
     GestureForcePressUpdateCallback? onForcePressUpdate,
-    GestureDragStartCallback? onPanStart,
-    GestureDragUpdateCallback? onPanUpdate,
     GestureDragDownCallback? onPanDown,
     GestureTapDownCallback? onSecondaryTapDown,
     GestureTapUpCallback? onSecondaryTapUp,
@@ -499,8 +498,6 @@ class TouchyCanvas {
           onForcePressEnd: null,
           onForcePressPeak: null,
           onForcePressUpdate: null,
-          onPanStart: null,
-          onPanUpdate: null,
           onPanDown: null,
           onSecondaryTapDown: null,
           onSecondaryTapUp: null,
