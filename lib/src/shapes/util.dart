@@ -59,7 +59,6 @@ class TouchCanvasUtil {
     required GestureTapDownCallback? onSecondaryTapDown,
     required GestureTapUpCallback? onSecondaryTapUp,
   }) {
-    print(onTapUp);
     var map = <GestureType, Function>{};
     if (onTapDown != null) {
       map.putIfAbsent(GestureType.onTapDown, () => onTapDown);

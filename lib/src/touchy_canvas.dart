@@ -34,6 +34,7 @@ class TouchyCanvas {
   }) {
     var touchController = TouchDetectionController.of(context);
     touchController?.addListener((event) {
+      print('touch received');
       _shapeHandler.handleGestureEvent(
         event,
         scrollController: scrollController,
@@ -78,6 +79,7 @@ class TouchyCanvas {
     GestureTapDownCallback? onSecondaryTapDown,
     GestureTapUpCallback? onSecondaryTapUp,
   }) {
+    print('drawing circle');
     _canvas.drawCircle(c, radius, paint);
     _shapeHandler.addShape(Circle(
         center: c,
