@@ -34,20 +34,28 @@ class _CanvasTouchDetectorState extends State<CanvasTouchDetector> {
 
   @override
   Widget build(BuildContext context) {
-    return TouchDetectionController(touchController, addStreamListener,
-        child: GestureDetector(
-          behavior: HitTestBehavior.translucent,
-          child: Builder(
-            builder: (context) {
-              return widget.builder(context);
-            },
-          ),
-          onTapUp: !widget.gesturesToOverride.contains(GestureType.onTapUp)
-              ? null
-              : (tapDetail) {
-                  touchController.add(Gesture(GestureType.onTapUp, tapDetail));
-                },
-        ));
+    return TouchDetectionController(
+      touchController,
+      addStreamListener,
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        child: Builder(
+          builder: (context) {
+            return widget.builder(context);
+          },
+        ),
+        onTapDown: !widget.gesturesToOverride.contains(GestureType.onTapDown)
+            ? null
+            : (tapDetail) {
+                touchController.add(Gesture(GestureType.onTapDown, tapDetail));
+              },
+        onTapUp: !widget.gesturesToOverride.contains(GestureType.onTapUp)
+            ? null
+            : (tapDetail) {
+                touchController.add(Gesture(GestureType.onTapUp, tapDetail));
+              },
+      ),
+    );
   }
 
   @override
