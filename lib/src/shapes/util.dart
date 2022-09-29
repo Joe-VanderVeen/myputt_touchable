@@ -55,7 +55,7 @@ class TouchCanvasUtil {
     required GestureForcePressUpdateCallback? onForcePressUpdate,
     GestureDragStartCallback? onPanStart,
     GestureDragUpdateCallback? onPanUpdate,
-    required GestureDragDownCallback? onPanDown,
+    GestureDragDownCallback? onPanDown,
     required GestureTapDownCallback? onSecondaryTapDown,
     required GestureTapUpCallback? onSecondaryTapUp,
   }) {

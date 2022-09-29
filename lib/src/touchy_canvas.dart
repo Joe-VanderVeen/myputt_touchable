@@ -480,7 +480,6 @@ class TouchyCanvas {
     GestureForcePressEndCallback? onForcePressEnd,
     GestureForcePressPeakCallback? onForcePressPeak,
     GestureForcePressUpdateCallback? onForcePressUpdate,
-    GestureDragDownCallback? onPanDown,
     GestureTapDownCallback? onSecondaryTapDown,
     GestureTapUpCallback? onSecondaryTapUp,
   }) {
@@ -498,7 +497,6 @@ class TouchyCanvas {
           onForcePressEnd: null,
           onForcePressPeak: null,
           onForcePressUpdate: null,
-          onPanDown: null,
           onSecondaryTapDown: null,
           onSecondaryTapUp: null,
         ));
